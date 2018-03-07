@@ -41,7 +41,10 @@ export class MsSqlRequest {
 
     execute() {
         let request = new Request(this.sql, (err, rowCount, rows) => {
-            err ? this.onErrorHandler(err) : this.onCompleteHandler({ rowCount, data: this.result });
+            err ? this.onErrorHandler(err) : (() => {
+                this.onCompleteHandler({ rowCount, data: this.result });
+                this.connection.close();
+            })();
         });
 
         this.params.forEach(p => {
@@ -57,6 +60,7 @@ export class MsSqlRequest {
         });
 
         this.connection.execSql(request);
+
         return request;
     }
 }
