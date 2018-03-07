@@ -29,6 +29,20 @@ export class PackageDataAccess {
         });
     }
 
+    insertPackages(packages) {
+        return new Promise((resolve, reject) => {
+            let promises = [];
+            packages.forEach(p => {
+                promises.push(this.insertPackage(p));
+            });
+            Promise.all(promises).then(res => {
+                resolve(res.length);
+            }).catch(error => {
+                reject(error);
+            });
+        });
+    }
+
     getAll() {
         return new Promise((resolve, reject) => {
             this.connection.connect().then(conn => {

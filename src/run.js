@@ -3,14 +3,26 @@ import { PackageDataAccess } from './package-data-access';
 
 let packageDataAccess = new PackageDataAccess();
 
-let pkg = {
-    packageNo: "PKG005",
-    company: "Company ABC",
-    shippingAgentCode: "DHL",
-    externalTrackingNo: "587569",
+let dummyData = [];
+
+for (let i = 1; i <= 100; i++) {
+    dummyData.push(
+        {
+            packageNo: "PKG" + i,
+            company: "Company ABC " + i,
+            shippingAgentCode: "DHL " + i,
+            externalTrackingNo: "TRK " + i,
+        }
+    );
 }
 
-packageDataAccess.insertPackage(pkg).then(d => {
+packageDataAccess.insertPackage(dummyData[0]).then(d => {
+    console.log(d);
+}, e => {
+    console.log(e);
+})
+
+packageDataAccess.insertPackages(dummyData).then(d => {
     console.log(d);
 }, e => {
     console.log(e);
