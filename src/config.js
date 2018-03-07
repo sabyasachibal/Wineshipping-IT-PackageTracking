@@ -1,6 +1,6 @@
 export const SqlServerConfig = {
     userName: 'sa',
-    password: '******',
+    password: '1stFeb2016',
     server: '127.0.0.1',
     options: {
         truestedConnection: true,
