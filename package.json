@@ -17,12 +17,12 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-3": "^6.24.1",
-    "babel-register": "^6.26.0"
-  },
-  "dependencies": {
+    "babel-register": "^6.26.0",
     "clean-webpack-plugin": "^0.1.19",
-    "tedious": "^2.3.1",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.10"
+  },
+  "dependencies": {
+    "tedious": "^2.3.1"
   }
 }
