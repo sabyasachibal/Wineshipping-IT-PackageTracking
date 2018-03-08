@@ -1,0 +1,14 @@
+{
+  "name": "package-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node run.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tedious": "^2.3.1"
+  }
+}
