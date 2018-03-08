@@ -5,7 +5,7 @@ let packageDataAccess = new PackageDataAccess();
 
 let dummyData = [];
 
-for (let i = 1; i <= 1000; i++) {
+for (let i = 1; i <= 2; i++) {
     dummyData.push(
         {
             packageNo: "PKG" + i,
